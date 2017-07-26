@@ -1,2 +1,2 @@
 # pyVM
-A Rudimentary Python Virtual Machine
+A Rudimentary Python Virtual Machine for Demonstrations
