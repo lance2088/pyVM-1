@@ -1,0 +1,61 @@
+-+- 0
+value: 2
+---
+-+- 1
+defined: 1
+value: 32
+---
+-+- 2
+defined: 0
+---
+-+- 3
+defined: 1
+value: 2048
+---
+-+- 4
+value: 2
+---
+-+- 5
+value: 1
+---
+-+- 6
+size: 8
+unsigned: 0
+---
+-+- 7
+size: 8
+unsigned: 1
+---
+-+- 8
+value: 4
+---
+-+- 9
+value: 1
+---
+-+- 10
+value: 16
+---
+-+- 11
+defined: 1
+value: 16384
+---
+-+- 12
+defined: 1
+value: 4096
+---
+-+- 13
+defined: 1
+value: 4
+---
+-+- 14
+defined: 1
+value: 32
+---
+-+- 15
+defined: 1
+value: 4
+---
+-+- 16
+defined: 1
+value: 1
+---
