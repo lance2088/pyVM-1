@@ -1,7 +1,9 @@
 import sys
 
+# Define Stack as a list
 stack = []
 
+# Define bytecode to opcode
 OP_EOP = "00"
 OP_EOI = "01"
 OP_PUSH = "02"
@@ -12,23 +14,28 @@ OP_SUB = "06"
 OP_MUL = "07"
 OP_DIV = "08"
 
+# Function loads the program as an arg from the user
 def load_program(argv):
     f = open(argv)
     lines = f.read().replace("\n", " ")
     lines = lines.split(" ")
     f.close()
     return lines
-    
+
+# Function pushes operations to the top of the stack
 def do_PUSH(i, l):
     topush = int(l[i + 1], 16)
     stack.append(topush)
-    
+
+# Function pops the value from the top of the stack and increments the stack
 def do_POP():
     stack.pop()
-    
+
+# Function prints value on the indicated stack index
 def do_PRINT(stack):
     print stack[-1]
-    
+
+# Function adds two values in the stack
 def do_ADD(stack):
     num1 = stack[-1]
     num2 = stack[-2]
@@ -36,7 +43,8 @@ def do_ADD(stack):
     stack.pop()
     stack.pop()
     stack.append(total)
-    
+
+# Function subtracts two values in the stack
 def do_SUB(stack):
     num1 = stack[-1]
     num2 = stack[-2]
@@ -45,6 +53,7 @@ def do_SUB(stack):
     stack.pop()
     stack.append(total)
 
+# Function multiplies two values in the stack
 def do_MUL(stack):
     num1 = stack[-1]
     num2 = stack[-2]
@@ -53,6 +62,7 @@ def do_MUL(stack):
     stack.pop()
     stack.append(total)
 
+# Function divides two values in the stack
 def do_DIV(stack):
     num1 = stack[-1]
     num2 = stack[-2]
@@ -61,7 +71,7 @@ def do_DIV(stack):
     stack.pop()
     stack.append(total)
 
-
+# Function parses the bytecode into operation functions, and exacutes them
 def execute_program(l):
     loop = 1
     i = 0
@@ -85,6 +95,7 @@ def execute_program(l):
             do_DIV(stack)
         i += 1
 
+# Function loads the bytecode into the execution function
 def run_program(argv):
     l = load_program(argv)
     execute_program(l)
